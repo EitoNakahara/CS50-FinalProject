@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    create
+{% endblock %}
+
+{% block main %}
+<div class="form">
+    <form action="/" method="POST">
+        <label for="age">年齢</label>
+        <input type="number" name="age">
+        <label for="goal">目標</label>
+        <input type="text" name="goal">
+        <label for="detail">詳細</label>
+        <input type="text" name="detail">
+        <input type="submit" value="Create">
+    </form>
+</div>
+{% endblock %}

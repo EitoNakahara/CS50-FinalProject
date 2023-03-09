@@ -5,21 +5,73 @@
 {% endblock %}
 
 {% block main %}
+<script type="text/javascript">
+    var year = "{{user_life[1]}}";var month = "{{user_life[2]}}";var day = "{{user_life[3]}}";var hour = "0";var minute = "0";var centi = "1";
+    var convert = "0";var roop = "";
+    var cnt1 = "日";var cnt2 = "時間";var cnt3 = "分";var cnt4 = "秒";
+    var baseoffset = "none";var cuttime = "0";
+    var br1 = "0";var br2 = "0";var br3 = "0";var br4 = "1";
+    var com1 = "残り";var com2 = "";var com3 = "";var com4 = "";var end = "1";
+    var width = "80%";var height = "200";
+    var font = "ms pgothic";var font2 = "7seg4";var size = "60";var t_size = "100";var l_height = "0";var t_height = "200";var bold = "";var italic = "";var line = "";
+    var space = "0px 0px 0px 0px";
+    var align = "2";var img = "";
+    var color1 = "FFFFFF";var color2 = "FF0000";var color3 = "000000";
+</script>
+<script type="text/javascript" src="//countdown.reportitle.com/js/neo1.js"></script><a href="//countdown.reportitle.com/"></a><script type="text/javascript" src="//countdown.reportitle.com/js/neo2.js"></script>
+<h2>人生を80年と考えたとき、{{user_name}}さんの残り時間は？</h2>
+<h2>これからやりたいことを定めましょう！！</h2>
+
+
+<script>
+  function countdownTimer(id, countDownDate) {
+    var x = setInterval(function() {
+      var now = new Date().getTime();
+      var distance = countDownDate - now;
+      
+      // 日数、時間、分数、秒数の計算
+      var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      
+      // タイマー表示の更新
+      document.getElementById(id).innerHTML = days + "日 ";
+      
+      // カウントダウン終了時の処理
+      if (distance < 0) {
+        clearInterval(x);
+        document.getElementById(id).innerHTML = "終了！";
+      }
+    }, 1000);
+  }
+</script>
+
 <table class="table">
     <thead class="table-light">
         <tr>
-            <th>username</th>
-            <th>cash</th>
-            <th>sum of total shares</th>
-            <th>total assets</th>
+            <th>年齢</th>
+            <th>目標</th>
+            <th>詳細</th>
+            <th>残り時間</th>
+            <th></th>
         </tr>
     </thead>
     <tbody>
+        {% for goal in goals %}
+            <script>
+                var countDownDate1 = new Date("{{user_life[0]+goal.age}}-{{user_life[2]}}-{{user_life[3]}}T00:00:00").getTime();
+                countdownTimer("timer_{{goal.goal_id}}", countDownDate1);
+            </script>
+
             <tr>
-                <td>{{user_info.name}}</td>
-                <td>{{user_info.date}}</td>
+                <td>{{goal.age}}歳</td>
+                <td>{{goal.goal}}</td>
+                <td>{{goal.detail}}</td>
+                <td><div id="timer_{{goal.goal_id}}"></div></td>
+                <th><a href="/delete/{{ goal.goal_id }}" role="button">削除</a></th>
             </tr>
+        {% endfor %}
     </tbody>
 </table>
 
+
 {% endblock %}
+
