@@ -3,7 +3,7 @@
 #### GIF Demo:
 ![DEMO](./finalproject.gif)
 
-## Description (English
+## Description
 This project will be the final project of the CS50 course offered by Harvard University.
 
 ### Overview.
@@ -29,7 +29,9 @@ After logging in, the remaining time until you turn 80 years old will be display
 3. press "Add" at the top of the screen and register when (by what age) and what you will do. 4.
 4. After registering, the list of things you want to do will appear at the bottom of the screen. The number of days remaining for each thing you want to do will be displayed, so make sure you accomplish it before the number of days reaches zero.
 
-## 説明(日本語)
+
+
+## 説明
 本プロジェクトはハーバード大学が提供するCS50講座の最終課題制作物になります。
 
 ### 概要
