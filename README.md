@@ -1,4 +1,5 @@
-# CS50-FinalProject
-CS50最終課題
-マークダウンでアプリの説明をする(チートシートを活用)
-gifを載せる
+# Redefining Life
+#### Video Demo: [https://www.youtube.com/watch?v=K6H94vAghpY](https://www.youtube.com/watch?v=K6H94vAghpY)
+#### Description:
+
+!DEMO(./finalproject.jif)
